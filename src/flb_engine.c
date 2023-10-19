@@ -125,6 +125,7 @@ void flb_engine_reschedule_retries(struct flb_config *config)
     struct flb_task_retry *retry;
 
     /* Invalidate and reschedule all retry tasks to be retried immediately */
+    flb_warn("[engine] reschedule triggered");
     mk_list_foreach(head, &config->inputs) {
         ins = mk_list_entry(head, struct flb_input_instance, _head);
         mk_list_foreach_safe(t_head, tmp_task, &ins->tasks) {

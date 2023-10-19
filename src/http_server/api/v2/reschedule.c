@@ -36,6 +36,7 @@
 
 static void handle_reschedule_request(mk_request_t *request, struct flb_config *config)
 {
+  flb_warn("[http_server] received reschedule request");
 	flb_engine_reschedule_retries(config);
 	mk_http_status(request, 200);
 	mk_http_done(request);
@@ -47,7 +48,7 @@ static void cb_reschedule(mk_request_t *request, void *data)
   struct flb_config *config = hs->config;
 
   if (request->method == MK_METHOD_POST) {
-      handle_reschedule_request(config);
+      handle_reschedule_request(request, config);
     }
     else {
         mk_http_status(request, 400);

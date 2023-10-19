@@ -28,6 +28,6 @@ int api_v2_registration(struct flb_hs *hs)
 {
     api_v2_reload(hs);
     api_v2_metrics(hs);
-    api_v2_reschedule(hs)
+    api_v2_reschedule(hs);
     return 0;
 }
