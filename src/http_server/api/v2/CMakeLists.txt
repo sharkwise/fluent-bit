@@ -3,6 +3,7 @@ set(src
   metrics.c
   reload.c
   register.c
+  reschedule.c
   )
 
 include_directories(${MONKEY_INCLUDE_DIR})
